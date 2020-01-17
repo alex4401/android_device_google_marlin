@@ -18,6 +18,9 @@
 #
 # Everything in this directory will become public
 
+GAPPS_VARIANT := micro
+$(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
+
 # Installs gsi keys into ramdisk, to boot a GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
