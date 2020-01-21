@@ -18,8 +18,60 @@
 #
 # Everything in this directory will become public
 
-GAPPS_VARIANT := micro
+GAPPS_VARIANT := pico
+GAPPS_FORCE_PIXEL_LAUNCHER := true
+GAPPS_PRODUCT_PACKAGES += \
+    libjni_latinimegoogle \
+    Velvet \
+    DigitalWellbeing \
+    MarkupGoogle \
+    SoundPicker \
+    PrebuiltExchange3Google \
+    GoogleTTS \
+    ActionsServices \
+    CalculatorGoogle \
+    PrebuiltDeskClockGoogle \
+    Photos \
+    StorageManagerGoogle \
+    GoogleContacts \
+    LatinImeGoogle \
+    GoogleExtServices \
+    GoogleExtShared \
+    CarrierServices \
+    GCS \
+    PixelLauncherIcons \
+    GoogleDialer \
+    PrebuiltBugle \
+    TrichromeLibrary \
+    Wallpapers \
+    Turbo \
+    PixelLauncher \
+    AndroidMigratePrebuilt \
+    AndroidPlatformServices \
+    WallpapersBReel2019 \
+    PixelSetupWizardOverlay
+
+GAPPS_FORCE_WEBVIEW_OVERRIDES := true
+GAPPS_FORCE_DIALER_OVERRIDES := true
+GAPPS_FORCE_MMS_OVERRIDES := true
+
+# Setup Wizard props
+PRODUCT_PROPERTY_OVERRIDES += \
+    setupwizard.theme=glif_v3_light \
+    setupwizard.feature.skip_button_use_mobile_data.carrier1839=true \
+    setupwizard.feature.show_pai_screen_in_main_flow.carrier1839=false \
+    setupwizard.feature.show_pixel_tos=true \
+    setupwizard.feature.baseline_setupwizard_enabled=true \
+    ro.setupwizard.esim_cid_ignore=00000001
+
+# Default GBoard theme
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.com.google.ime.theme_id=5
+
+
 $(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
+$(call inherit-product, vendor/pixelstyle/config.mk)
+$(call inherit-product, vendor/pixelstyle/Android.mk)
 
 # Installs gsi keys into ramdisk, to boot a GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
