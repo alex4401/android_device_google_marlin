@@ -21,37 +21,40 @@
 GAPPS_VARIANT := pico
 GAPPS_FORCE_PIXEL_LAUNCHER := true
 GAPPS_PRODUCT_PACKAGES += \
+    \ # Libraries
     libjni_latinimegoogle \
-    Velvet \
-    DigitalWellbeing \
-    MarkupGoogle \
-    SoundPicker \
-    PrebuiltExchange3Google \
-    GoogleTTS \
+    TrichromeLibrary \
+    \ # Services
     ActionsServices \
-    CalculatorGoogle \
-    PrebuiltDeskClockGoogle \
-    Photos \
-    StorageManagerGoogle \
-    GoogleContacts \
-    LatinImeGoogle \
-    GoogleExtServices \
-    GoogleExtShared \
     CarrierServices \
     GCS \
-    PixelLauncherIcons \
+    GoogleExtServices \
+    GoogleExtShared \
+    \ # System Apps
+    StorageManagerGoogle \
+    DigitalWellbeing \
+    SoundPicker \
+    \ # Essential Apps
+    Velvet \
     GoogleDialer \
     PrebuiltBugle \
-    TrichromeLibrary \
+    LatinImeGoogle \
+    GoogleContacts \
+    \ # Extra Apps
     Wallpapers \
-    Turbo \
+    MarkupGoogle \
+    PrebuiltDeskClockGoogle \
+    PrebuiltExchange3Google \
+    GoogleNow \
+    \ # Extras
+    PixelSetupWizardOverlay \
+    PixelLauncherIcons
+
     PixelLauncher \
-    AndroidMigratePrebuilt \
-    AndroidPlatformServices \
     WallpapersBReel2019 \
-    PixelSetupWizardOverlay
 
 GAPPS_FORCE_WEBVIEW_OVERRIDES := true
+GAPPS_FORCE_BROWSER_OVERRIDES := false
 GAPPS_FORCE_DIALER_OVERRIDES := true
 GAPPS_FORCE_MMS_OVERRIDES := true
 
